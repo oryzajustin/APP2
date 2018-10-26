@@ -15,8 +15,7 @@ public class Shoot : MonoBehaviour {
 	ParticleSystem muzzleParticle;
 	GameObject muzzle;
 
-	private ScoreManager score;
-
+	public ScoreManager score;
 
 	GameObject player;
 	GameObject ai;
@@ -46,13 +45,14 @@ public class Shoot : MonoBehaviour {
 		muzzle = GameObject.FindGameObjectWithTag ("Muzzle");
 
 		gunshot = GetComponent<AudioSource> ();
+
 //		print(player_it);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		timer += Time.time;
-		if(Input.GetButtonDown ("Fire1") && playerscript.it && timer >= timeToShoot && Time.timeScale != 0){
+		if(Input.GetButtonDown ("Fire1") && playerscript.it && timer >= timeToShoot && Time.timeScale != 0 && score.timeLeft > 0){
 //			timeToShoot = Time.time + 1f / fireRate;
 			Fire();
 		}
@@ -88,6 +88,7 @@ public class Shoot : MonoBehaviour {
 //			player_it = false;
 //			ai_it = true;
 			score.playerScore++;
+			print (score.playerScore);
 		}
 	}
 }

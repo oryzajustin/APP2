@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameOverHandler : MonoBehaviour {
-	private GameObject gameover;
-	private GameObject esc;
+	public GameObject gameover;
+	private GameObject esc;	
 	private ScoreManager score;
+//	public float timeLeft;
 
 	private bool paused;
 	// Use this for initialization
 	void Start () {
-		gameover = GameObject.FindGameObjectWithTag("Finish");
+//		gameover = GameObject.FindGameObjectWithTag("Finish");
 		esc = GameObject.FindGameObjectWithTag ("ESC");
 		score = GetComponent<ScoreManager> ();
 
@@ -23,6 +24,7 @@ public class GameOverHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+//		timeLeft -= Time.deltaTime;
 		if(Input.GetButtonDown("Cancel") && !paused){
 			esc.SetActive (true);
 			paused = true;
@@ -33,6 +35,7 @@ public class GameOverHandler : MonoBehaviour {
 		}
 		if (score.timeLeft <= 0 && !paused) {
 			gameover.SetActive (true);
+//			DisplayScore ();
 		}
 		else if (score.timeLeft <= 0 && paused) {
 			gameover.SetActive (true);

@@ -8,7 +8,9 @@ public class ScoreManager : MonoBehaviour {
 	public int playerScore;
 	public int aiScore;
 	public float timeLeft;
+	public int[] highScores;
 
+	private int j = 0;
 	private GameObject gameover;
 	private GameObject esc;
 //	private Text overText;
@@ -20,10 +22,14 @@ public class ScoreManager : MonoBehaviour {
 	void Start () {
 		playerScore = 0;
 		aiScore = 0;
+		highScores = new int[3];
+		for (int i = 0; i < 3; i++) {
+			highScores [i] = 0;
+		}
 //		script = GetComponent<GameOver> ();
 //		gameover = GameObject.FindGameObjectWithTag("Finish");
 //		esc = GameObject.FindGameObjectWithTag ("ESC");
-//		overText = GetComponentInChildren<Text> ();
+//		overText = GetComponent<Text>();
 //		gameovertext = gameovercanvas.GetComponent<Text> ();
 //		gameover.SetActive (false);
 //		esc.SetActive (false);
@@ -35,6 +41,23 @@ public class ScoreManager : MonoBehaviour {
 //		gameover.SetActive (false);
 //		esc.SetActive (false);
 		timeLeft -= Time.deltaTime;
+//		if (timeLeft <= 0) {
+//			if (playerScore > aiScore) {
+//				if (highScores [j] == 0 && playerScore != 0) {
+//					highScores [j] = playerScore;
+//					j++;
+//					if (j >= 3) {
+//						j = 0;
+//					}
+//				} else if (highScores [j] != 0 && highScores [j] < playerScore) {
+//					highScores [j] = playerScore;
+//					j++;
+//					if (j >= 3) {
+//						j = 0;
+//					}
+//				}
+//			}
+//		}
 //		if(Input.GetButtonDown("Cancel")){
 //			esc.SetActive (true);
 //		}

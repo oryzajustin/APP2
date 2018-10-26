@@ -13,7 +13,7 @@ public class AIShoot : MonoBehaviour {
 	ParticleSystem muzzleParticle;
 	GameObject muzzle;
 
-	private ScoreManager score;
+	public ScoreManager score;
 
 	GameObject player;
 	GameObject ai;
@@ -40,7 +40,7 @@ public class AIShoot : MonoBehaviour {
 
 		muzzleParticle = player.GetComponent<ParticleSystem> ();
 
-		score = GetComponent<ScoreManager> ();
+//		score = GetComponent<ScoreManager> ();
 
 		muzzle = GameObject.FindGameObjectWithTag ("AIMuzzle");
 		gunshot = GetComponent<AudioSource> ();
@@ -49,7 +49,7 @@ public class AIShoot : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Physics.Raycast (muzzle.transform.position, muzzle.transform.forward, out shootHit, range, shootableMask)) {
-			if (aiscript.it && !(shootHit.collider.tag == "Obstacles")) {
+			if (aiscript.it && !(shootHit.collider.tag == "Obstacles") && score.timeLeft > 0) {
 				Fire ();
 			}
 		}

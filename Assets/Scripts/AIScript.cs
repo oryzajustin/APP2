@@ -10,6 +10,7 @@ public class AIScript : MonoBehaviour {
 	public bool it;
 	[SerializeField]
 	private Transform[] navPoints;
+	public ScoreManager score;
 
 
 	// Use this for initialization
@@ -25,11 +26,17 @@ public class AIScript : MonoBehaviour {
 //		aiSpeed = 1;
 		if (it) {
 //			print ("AI IS IT");
-			Chase ();
+			if (score.timeLeft > 0) {
+				Chase ();
+			} else {
+				anim.SetFloat ("speed", 0);
+			}
 
 		} else {
 //			print ("AI IS NOT IT");
-			RunAway ();
+//			if (score.timeLeft > 0){
+				RunAway ();
+//			}
 		}
 	}
 	void RunAway(){
