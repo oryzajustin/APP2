@@ -1,4 +1,4 @@
-# Justin Koh
+# Dart Tag
 
 # Game Features
 - Main Menu with START and EXIT options
