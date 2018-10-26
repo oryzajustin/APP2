@@ -1,4 +1,4 @@
-# Justin Koh 250837810
+# Justin Koh
 
 # Game Features
 - Main Menu with START and EXIT options
