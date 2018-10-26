@@ -12,7 +12,7 @@
 - Game ends after 120 seconds
 - Player can press "ESC" to be prompted to quit
 - Player can QUIT at any time
+- Scores displayed
 
 # Issues
-- Had trouble displaying end scores
 - AI sometimes gets stuck on collider edges
