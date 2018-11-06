@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour {
 	private int j = 0;
 	private GameObject gameover;
 	private GameObject esc;
+	private string writeToFile;
 //	private Text overText;
 
 //	public GameOver script;
@@ -22,10 +23,10 @@ public class ScoreManager : MonoBehaviour {
 	void Start () {
 		playerScore = 0;
 		aiScore = 0;
-		highScores = new int[3];
-		for (int i = 0; i < 3; i++) {
-			highScores [i] = 0;
-		}
+//		highScores = new int[3];
+//		for (int i = 0; i < 3; i++) {
+//			highScores [i] = 0;
+//		}
 //		script = GetComponent<GameOver> ();
 //		gameover = GameObject.FindGameObjectWithTag("Finish");
 //		esc = GameObject.FindGameObjectWithTag ("ESC");
@@ -41,6 +42,18 @@ public class ScoreManager : MonoBehaviour {
 //		gameover.SetActive (false);
 //		esc.SetActive (false);
 		timeLeft -= Time.deltaTime;
+		if (timeLeft < 0) {
+			timeLeft = 0;
+		}
+//		if (timeLeft <= 0) {
+//			if (playerScore > aiScore) {
+//				writeToFile = playerScore.ToString ();
+//				System.IO.File.WriteAllText ("./Assets/Scripts/scorefile.txt", writeToFile);
+//			} else {
+//				writeToFile = aiScore.ToString ();
+//				System.IO.File.WriteAllText ("./Assets/Scripts/scorefile.txt", writeToFile);
+//			}
+//		}
 //		if (timeLeft <= 0) {
 //			if (playerScore > aiScore) {
 //				if (highScores [j] == 0 && playerScore != 0) {
@@ -87,7 +100,7 @@ public class ScoreManager : MonoBehaviour {
 //			endText.text = "Try again, the AI won with " + aiScore + " tags!";
 //		}
 //	}
-	public void BackToMain(){
-		SceneManager.LoadScene ("StartMenu");
-	}
+//	public void BackToMain(){
+//		SceneManager.LoadScene ("StartMenu");
+//	}
 }

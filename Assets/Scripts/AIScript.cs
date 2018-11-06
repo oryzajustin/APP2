@@ -11,6 +11,7 @@ public class AIScript : MonoBehaviour {
 	[SerializeField]
 	private Transform[] navPoints;
 	public ScoreManager score;
+	private string writeToFile;
 
 
 	// Use this for initialization
@@ -38,6 +39,12 @@ public class AIScript : MonoBehaviour {
 				RunAway ();
 //			}
 		}
+//		if(score.timeLeft <= 0){
+//			if (score.aiScore > score.playerScore) {
+//				writeToFile = score.aiScore.ToString ();
+//				System.IO.File.WriteAllText ("./Assets/Scripts/scorefile.txt", writeToFile);
+//			}
+//		}
 	}
 	void RunAway(){
 		float furthestDistance = 0;
