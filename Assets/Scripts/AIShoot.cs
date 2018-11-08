@@ -54,6 +54,11 @@ public class AIShoot : MonoBehaviour {
 			}
 		}
 	}
+	void OnCollisionEnter(Collision col){
+		if (col.gameObject.name == "Player1" && aiscript.it) {
+			SwapIt ();
+		}
+	}
 	void Fire(){
 		
 		muzzleParticle.Play();

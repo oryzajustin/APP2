@@ -76,6 +76,9 @@ public class AIScript : MonoBehaviour {
 		nav.angularSpeed = 150;
 		nav.speed = 6;
 		nav.acceleration = 10;
+//		if (nav.remainingDistance <= 3){
+//			
+//		}
 		anim.SetFloat ("speed", nav.speed);
 		nav.SetDestination (player.position);
 	}
